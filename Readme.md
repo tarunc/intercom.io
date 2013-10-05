@@ -14,7 +14,7 @@ npm install --save intercom.io
 
 ## Usage
 
-See docs for complete API documentation.
+See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://docs.intercom.io/api).
 
 ```javascript
 var Intercom = require('intercom.io');
@@ -180,7 +180,24 @@ intercom.getUsers({
 });
 ```
 
-See docs for complete API documentation. See tests for more examples.
+List of supported methods:
+```javascript
+* intercom.getUsers
+* intercom.getUser
+* intercom.createUser
+* intercom.updateUser
+* intercom.deleteUser
+* intercom.createImpression
+* intercom.getMessageThread
+* intercom.createMessageThread
+* intercom.replyMessageThread
+* intercom.createNote
+* intercom.getTag
+* intercom.createTag
+* intercom.updateTag
+```
+
+See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation. See tests for more examples.
 
 ## License
 
