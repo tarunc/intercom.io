@@ -155,7 +155,7 @@ List of supported methods:
 * intercom.updateTag
 ```
 
-See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation. See tests for more examples.
+See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://docs.intercom.io/api). See tests for more examples.
 
 ## License
 
