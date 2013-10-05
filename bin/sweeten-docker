@@ -1,0 +1,79 @@
+#!/bin/bash
+
+# sweeten-docco.sh
+# Sweeten docco output with syntax highlighted JSDoc and Codo tags.
+
+# Builds sed command for the current os
+sed_cmd() {
+  local cmd=''
+  local os=$( uname )
+  case $os in
+    Darwin) cmd='sed -E -i .orig' ;;
+    Linux)  cmd='sed -r -i.orig' ;;
+  esac
+  printf "$cmd"
+}
+
+SED=$( sed_cmd )
+
+if [[ -e "$1" ]]; then
+  cd "$1"
+
+  echo -n "Sweetening docco... "
+
+  # Tag lists for JSDoc & Codo
+  jsdocTags='author constructor deprecated exception param private property return see this throws version'
+  codoTags='abstract author concern copyright deprecated example extend include note method mixin option overload param private return see since todo version'
+
+  # More tags...
+  extendedTags='api export require env global'
+
+  # Build a combined list, and regex to match any tag
+  allTags=$( echo $extendedTags $codoTags $jsdocTags | uniq )
+  anyTag=$( echo $allTags | sed 's/ /|/g' )
+
+  # Literal newline for sed substitution on Mac OS X
+  newLine=$'\n'
+
+  # Put each paragraph tag on its own line
+  $SED "s/(.)(<p>|<\/p>)/\1\\$newLine\2/g" *.html
+  $SED "s/(<p>|<\/p>)(.)/\1\\$newLine\2/g" *.html
+
+  # Sed range to match within paragraph tags
+  inParagraph='/<p>/,/<\/p>/'
+
+  # HTML-escape angle brackets in tag statements
+  $SED $inParagraph' {
+    /<div class="doc-tag">/b
+    /@('$anyTag')/ s/</\&lt;/g
+    /@('$anyTag')/ s/>/\&gt;/g
+  }' *.html
+
+  # Wrap each doc tag statement
+  $SED $inParagraph' s/(@('$anyTag').*)/<div class="doc-tag">\1<\/div>/' *.html
+
+  # Param pattern helpers
+  paramTypeBegin='[[{]'
+  paramTypeEnd='[]}]'
+  paramTypeTokens='[^[:space:]]+'
+  paramType="${paramTypeBegin}${paramTypeTokens}${paramTypeEnd}"
+  paramNameTokens='(,[[:space:]]+|[^[:space:]<])+'
+
+  # Ensure the param name is listed before the type;
+  # wrap param name with <code>, param type with <i>, and tag names with <b>
+  $SED $inParagraph' s/(@param|@property) +('$paramType') +('$paramNameTokens')/\1 \3 \2/' *.html
+  $SED $inParagraph' s/(@param|@property) +('$paramNameTokens')/\1 <code>\2<\/code>/' *.html
+  $SED $inParagraph' s/(@param|@property|@return) ([^[{]*)'"$paramTypeBegin($paramTypeTokens)$paramTypeEnd"'/\1 \2<i>\3<\/i>/' *.html
+  $SED $inParagraph' s/@('$anyTag')/<b>\1<\/b>/' *.html
+
+  # Delete the sed backups
+  rm *.html.orig
+
+  # Append doc-tag style to docco's css
+  echo '.doc-tag { color: #777; }' >> docco.css
+  echo '.doc-tag * { color: #222; }' >> docco.css
+
+  echo "Done."
+else
+  echo "Directory 'docs' not found."
+fi
