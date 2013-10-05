@@ -67,30 +67,9 @@ intercom.createUser({
   //   "custom_data": {
   //     "plan": "pro"
   //   },
-  //   "social_profiles": [
-  //     {
-  //       "type": "twitter",
-  //       "url": "http://twitter.com/abc",
-  //       "username": "abc"
-  //     },
-  //     {
-  //       "type": "facebook",
-  //       "url": "http://facebook.com/vanity",
-  //       "username": "vanity",
-  //       "id": "13241141441141413"
-  //     }
-  //   ],
-  //   "location_data": {
-  //     "city_name": "Santiago",
-  //     "continent_code": "SA",
-  //     "country_name": "Chile",
-  //     "latitude": -33.44999999999999,
-  //     "longitude": -70.6667,
-  //     "postal_code": "",
-  //     "region_name": "12",
-  //     "timezone": "Chile/Continental",
-  //     "country_code": "CHL"
-  //   },
+  // ...
+  // ...
+  // ...
   //   "session_count": 0,
   //   "last_seen_ip": "1.2.3.4",
   //   "last_seen_user_agent": "ie6",
@@ -113,30 +92,9 @@ intercom.getUser({ "email": "ben@intercom.io" }, function(err, res) {
   //   "custom_data": {
   //     "plan": "pro"
   //   },
-  //   "social_profiles": [
-  //     {
-  //       "type": "twitter",
-  //       "url": "http://twitter.com/abc",
-  //       "username": "abc"
-  //     },
-  //     {
-  //       "type": "facebook",
-  //       "url": "http://facebook.com/vanity",
-  //       "username": "vanity",
-  //       "id": "13241141441141413"
-  //     }
-  //   ],
-  //   "location_data": {
-  //     "city_name": "Santiago",
-  //     "continent_code": "SA",
-  //     "country_name": "Chile",
-  //     "latitude": -33.44999999999999,
-  //     "longitude": -70.6667,
-  //     "postal_code": "",
-  //     "region_name": "12",
-  //     "timezone": "Chile/Continental",
-  //     "country_code": "CHL"
-  //   },
+  // ...
+  // ...
+  // ...
   //   "session_count": 0,
   //   "last_seen_ip": "1.2.3.4",
   //   "last_seen_user_agent": "ie6",
