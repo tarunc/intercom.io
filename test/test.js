@@ -1,25 +1,12 @@
 var assert = require('assert');
 
 // Please change appId and apiKey
-var intercom = require('../index.js').create('dummy-app_id', 'dummy-api_key');
+var intercom = require('../index.js').create('app_id', 'api_key');
 
 describe('Intercom', function(){
   describe('#getUsers()', function(){
     it('should get all users', function(done){
       intercom.getUsers(function (err, res) {
-        if (err) {
-          throw err;
-        }
-
-        console.log(res);
-        done();
-      });
-    });
-  });
-
-  describe('#getUser()', function(){
-    it('should get a specific user', function(done){
-      intercom.getUser({ email: 'somebody@example.com' }, function (err, res) {
         if (err) {
           throw err;
         }
@@ -65,7 +52,20 @@ describe('Intercom', function(){
       });
     });
   });
-
+    
+  describe('#getUser()', function(){
+      it('should get a specific user', function(done){
+        intercom.getUser({ email: 'somebody@example.com' }, function (err, res) {
+          if (err) {
+            throw err;
+          }
+  
+          console.log(res);
+          done();
+        });
+      });
+  });
+    
   describe('#deleteUser()', function(){
     it('should delete a specific user', function(done){
       intercom.deleteUser({
@@ -80,5 +80,7 @@ describe('Intercom', function(){
       });
     });
   });
+  
+  
 });
 
