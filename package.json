@@ -1,6 +1,6 @@
 {
   "name": "intercom.io",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An NodeJS API client for intercom.io",
   "keywords": ["api", "intercom", "node-intercom", "client", "intercom.io"],
   "author": "Tarun Chaudhry <tarunc92@gmail.com>",
