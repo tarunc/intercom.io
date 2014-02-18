@@ -446,7 +446,7 @@ to make requests to the intercom api.</p>
 <a class="line-num" href="#line-122" id="line-122">122</a>      <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span>
 <a class="line-num" href="#line-123" id="line-123">123</a>    <span class="p">};</span>
 <a class="line-num" href="#line-124" id="line-124">124</a>  
-<a class="line-num" href="#line-125" id="line-125">125</a>    <span class="k">if</span> <span class="p">(</span><span class="nx">method</span> <span class="o">===</span> <span class="s1">&#39;GET&#39;</span> <span class="o">||</span> <span class="nx">method</span> <span class="o">===</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-125" id="line-125">125</a>    <span class="k">if</span> <span class="p">(</span><span class="nx">method</span> <span class="o">===</span> <span class="s1">&#39;GET&#39;</span><span class="p">)</span> <span class="p">{</span>
 <a class="line-num" href="#line-126" id="line-126">126</a>      <span class="nx">requestOptions</span><span class="p">.</span><span class="nx">qs</span> <span class="o">=</span> <span class="nx">parameters</span><span class="p">;</span>
 <a class="line-num" href="#line-127" id="line-127">127</a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
 <a class="line-num" href="#line-128" id="line-128">128</a>  
@@ -461,7 +461,7 @@ to make requests to the intercom api.</p>
 <p>requestOptions.form = parameters;</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-128" id="line-128">128</a>  
-<a class="line-num" href="#line-129" id="line-129">129</a>      <span class="nx">requestOptions</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="nx">qs</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">);</span>
+<a class="line-num" href="#line-129" id="line-129">129</a>      <span class="nx">requestOptions</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">);</span>
 <a class="line-num" href="#line-130" id="line-130">130</a>      <span class="nx">requestOptions</span><span class="p">.</span><span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
 <a class="line-num" href="#line-131" id="line-131">131</a>        <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span>
 <a class="line-num" href="#line-132" id="line-132">132</a>      <span class="p">};</span>
@@ -544,27 +544,32 @@ to make requests to the intercom api.</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-171" id="line-171">171</a>  
 <a class="line-num" href="#line-172" id="line-172">172</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getUsers</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-173" id="line-173">173</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-174" id="line-174">174</a>  <span class="p">};</span>
-<a class="line-num" href="#line-175" id="line-175">175</a>  
-<a class="line-num" href="#line-176" id="line-176">176</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-177" id="line-177">177</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-178" id="line-178">178</a>  <span class="p">};</span>
-<a class="line-num" href="#line-179" id="line-179">179</a>  
-<a class="line-num" href="#line-180" id="line-180">180</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-181" id="line-181">181</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-182" id="line-182">182</a>  <span class="p">};</span>
-<a class="line-num" href="#line-183" id="line-183">183</a>  
-<a class="line-num" href="#line-184" id="line-184">184</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">updateUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-185" id="line-185">185</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-186" id="line-186">186</a>  <span class="p">};</span>
-<a class="line-num" href="#line-187" id="line-187">187</a>  
-<a class="line-num" href="#line-188" id="line-188">188</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">deleteUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-189" id="line-189">189</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;DELETE&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-190" id="line-190">190</a>  <span class="p">};</span>
-<a class="line-num" href="#line-191" id="line-191">191</a>  
+<a class="line-num" href="#line-173" id="line-173">173</a>    <span class="k">if</span> <span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">isFunction</span><span class="p">(</span><span class="nx">options</span><span class="p">))</span> <span class="p">{</span>
+<a class="line-num" href="#line-174" id="line-174">174</a>      <span class="nx">cb</span> <span class="o">=</span> <span class="nx">options</span><span class="p">;</span>
+<a class="line-num" href="#line-175" id="line-175">175</a>      <span class="nx">options</span> <span class="o">=</span> <span class="p">{};</span>
+<a class="line-num" href="#line-176" id="line-176">176</a>    <span class="p">}</span>
+<a class="line-num" href="#line-177" id="line-177">177</a>  
+<a class="line-num" href="#line-178" id="line-178">178</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-179" id="line-179">179</a>  <span class="p">};</span>
+<a class="line-num" href="#line-180" id="line-180">180</a>  
+<a class="line-num" href="#line-181" id="line-181">181</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-182" id="line-182">182</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-183" id="line-183">183</a>  <span class="p">};</span>
+<a class="line-num" href="#line-184" id="line-184">184</a>  
+<a class="line-num" href="#line-185" id="line-185">185</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-186" id="line-186">186</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-187" id="line-187">187</a>  <span class="p">};</span>
+<a class="line-num" href="#line-188" id="line-188">188</a>  
+<a class="line-num" href="#line-189" id="line-189">189</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">updateUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-190" id="line-190">190</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-191" id="line-191">191</a>  <span class="p">};</span>
 <a class="line-num" href="#line-192" id="line-192">192</a>  
-<a class="line-num" href="#line-193" id="line-193">193</a>  </pre></div>
+<a class="line-num" href="#line-193" id="line-193">193</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">deleteUser</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-194" id="line-194">194</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;DELETE&#39;</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-195" id="line-195">195</a>  <span class="p">};</span>
+<a class="line-num" href="#line-196" id="line-196">196</a>  
+<a class="line-num" href="#line-197" id="line-197">197</a>  
+<a class="line-num" href="#line-198" id="line-198">198</a>  </pre></div>
         </td>
       </tr>
       <tr>
@@ -577,13 +582,13 @@ to make requests to the intercom api.</p>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-192" id="line-192">192</a>  
-<a class="line-num" href="#line-193" id="line-193">193</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createImpression</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-194" id="line-194">194</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;users/impressions&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-195" id="line-195">195</a>  <span class="p">};</span>
-<a class="line-num" href="#line-196" id="line-196">196</a>  
-<a class="line-num" href="#line-197" id="line-197">197</a>  
-<a class="line-num" href="#line-198" id="line-198">198</a>  </pre></div>
+        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-197" id="line-197">197</a>  
+<a class="line-num" href="#line-198" id="line-198">198</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createImpression</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-199" id="line-199">199</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;users/impressions&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-200" id="line-200">200</a>  <span class="p">};</span>
+<a class="line-num" href="#line-201" id="line-201">201</a>  
+<a class="line-num" href="#line-202" id="line-202">202</a>  
+<a class="line-num" href="#line-203" id="line-203">203</a>  </pre></div>
         </td>
       </tr>
       <tr>
@@ -596,21 +601,21 @@ to make requests to the intercom api.</p>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-197" id="line-197">197</a>  
-<a class="line-num" href="#line-198" id="line-198">198</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getMessageThread</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-199" id="line-199">199</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;users/message_threads&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-200" id="line-200">200</a>  <span class="p">};</span>
-<a class="line-num" href="#line-201" id="line-201">201</a>  
-<a class="line-num" href="#line-202" id="line-202">202</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createMessageThread</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-203" id="line-203">203</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;users/message_threads&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-204" id="line-204">204</a>  <span class="p">};</span>
-<a class="line-num" href="#line-205" id="line-205">205</a>  
-<a class="line-num" href="#line-206" id="line-206">206</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">replyMessageThread</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-207" id="line-207">207</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;users/message_threads&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-208" id="line-208">208</a>  <span class="p">};</span>
-<a class="line-num" href="#line-209" id="line-209">209</a>  
+        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-202" id="line-202">202</a>  
+<a class="line-num" href="#line-203" id="line-203">203</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getMessageThread</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-204" id="line-204">204</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;users/message_threads&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-205" id="line-205">205</a>  <span class="p">};</span>
+<a class="line-num" href="#line-206" id="line-206">206</a>  
+<a class="line-num" href="#line-207" id="line-207">207</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createMessageThread</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-208" id="line-208">208</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;users/message_threads&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-209" id="line-209">209</a>  <span class="p">};</span>
 <a class="line-num" href="#line-210" id="line-210">210</a>  
-<a class="line-num" href="#line-211" id="line-211">211</a>  </pre></div>
+<a class="line-num" href="#line-211" id="line-211">211</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">replyMessageThread</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-212" id="line-212">212</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;users/message_threads&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-213" id="line-213">213</a>  <span class="p">};</span>
+<a class="line-num" href="#line-214" id="line-214">214</a>  
+<a class="line-num" href="#line-215" id="line-215">215</a>  
+<a class="line-num" href="#line-216" id="line-216">216</a>  </pre></div>
         </td>
       </tr>
       <tr>
@@ -623,13 +628,13 @@ to make requests to the intercom api.</p>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-210" id="line-210">210</a>  
-<a class="line-num" href="#line-211" id="line-211">211</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createNote</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-212" id="line-212">212</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;users/notes&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-213" id="line-213">213</a>  <span class="p">};</span>
-<a class="line-num" href="#line-214" id="line-214">214</a>  
-<a class="line-num" href="#line-215" id="line-215">215</a>  
-<a class="line-num" href="#line-216" id="line-216">216</a>  </pre></div>
+        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-215" id="line-215">215</a>  
+<a class="line-num" href="#line-216" id="line-216">216</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createNote</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-217" id="line-217">217</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;users/notes&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-218" id="line-218">218</a>  <span class="p">};</span>
+<a class="line-num" href="#line-219" id="line-219">219</a>  
+<a class="line-num" href="#line-220" id="line-220">220</a>  
+<a class="line-num" href="#line-221" id="line-221">221</a>  </pre></div>
         </td>
       </tr>
       <tr>
@@ -642,21 +647,21 @@ to make requests to the intercom api.</p>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-215" id="line-215">215</a>  
-<a class="line-num" href="#line-216" id="line-216">216</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getTag</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-217" id="line-217">217</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-218" id="line-218">218</a>  <span class="p">};</span>
-<a class="line-num" href="#line-219" id="line-219">219</a>  
-<a class="line-num" href="#line-220" id="line-220">220</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createTag</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-221" id="line-221">221</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-222" id="line-222">222</a>  <span class="p">};</span>
-<a class="line-num" href="#line-223" id="line-223">223</a>  
-<a class="line-num" href="#line-224" id="line-224">224</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">updateTag</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-<a class="line-num" href="#line-225" id="line-225">225</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
-<a class="line-num" href="#line-226" id="line-226">226</a>  <span class="p">};</span>
-<a class="line-num" href="#line-227" id="line-227">227</a>  
+        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-220" id="line-220">220</a>  
+<a class="line-num" href="#line-221" id="line-221">221</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">getTag</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-222" id="line-222">222</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-223" id="line-223">223</a>  <span class="p">};</span>
+<a class="line-num" href="#line-224" id="line-224">224</a>  
+<a class="line-num" href="#line-225" id="line-225">225</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">createTag</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-226" id="line-226">226</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-227" id="line-227">227</a>  <span class="p">};</span>
 <a class="line-num" href="#line-228" id="line-228">228</a>  
-<a class="line-num" href="#line-229" id="line-229">229</a>  </pre></div>
+<a class="line-num" href="#line-229" id="line-229">229</a>  <span class="nx">Intercom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">updateTag</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+<a class="line-num" href="#line-230" id="line-230">230</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="nx">userObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+<a class="line-num" href="#line-231" id="line-231">231</a>  <span class="p">};</span>
+<a class="line-num" href="#line-232" id="line-232">232</a>  
+<a class="line-num" href="#line-233" id="line-233">233</a>  
+<a class="line-num" href="#line-234" id="line-234">234</a>  </pre></div>
         </td>
       </tr>
       <tr>
@@ -671,9 +676,9 @@ to make requests to the intercom api.</p>
   </div>
 </div>
         </td>
-        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-230" id="line-230">230</a>  
-<a class="line-num" href="#line-231" id="line-231">231</a>  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Intercom</span><span class="p">;</span>
-<a class="line-num" href="#line-232" id="line-232">232</a>  </pre></div>
+        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-235" id="line-235">235</a>  
+<a class="line-num" href="#line-236" id="line-236">236</a>  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Intercom</span><span class="p">;</span>
+<a class="line-num" href="#line-237" id="line-237">237</a>  </pre></div>
         </td>
       </tr>
   </tbody>
