@@ -1,7 +1,12 @@
 var assert = require('assert');
 
 // Please change appId and apiKey
-var intercom = require('../index.js').create('app_id', 'api_key');
+var APP_ID = 'ncnet90v';
+var API_KEY = 'f9479bddbe3b8e96864293bd85d0104947f9fe68';
+
+var intercom = require('../index.js').create(APP_ID, API_KEY);
+// events api requires v3 endpoint
+var intercom_v3 = require('../index.js').create(APP_ID, API_KEY, {endpoint: 'https://api.intercom.io/'});
 
 describe('Intercom', function(){
   describe('#getUsers()', function(){
@@ -23,7 +28,7 @@ describe('Intercom', function(){
         'email' : 'somebody@example.com',
         'name' : 'Somebody',
         'created_at' : (new Date() / 1000),
-        'pre_launch' : true,
+
         'last_seen_ip' : '1.2.3.4',
         'last_seen_user_agent' : 'ie6'
       }, function (err, res) {
@@ -64,6 +69,24 @@ describe('Intercom', function(){
           done();
         });
       });
+  });
+  
+  describe('#createEvent()', function(){
+    it('should create a user event', function(done){
+      intercom_v3.createEvent({
+        'event_name' : 'some event',
+        'created' : (new Date() / 1000),
+        'email' : 'somebody@example.com'
+      }, function (err, res) {
+        if (err) {
+            console.error(err);
+          throw err;
+        }
+
+        console.log(res);
+        done();
+      });
+    });
   });
     
   describe('#deleteUser()', function(){
