@@ -39,7 +39,7 @@ describe('Intercom', function(){
 
   describe('#updateUser()', function(){
     it('should update a specific user', function(done){
-      intercom.createUser({
+      intercom.updateUser({
         'email' : 'somebody@example.com',
         'name' : 'Me!',
       }, function (err, res) {
