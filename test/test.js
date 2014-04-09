@@ -1,8 +1,8 @@
 var assert = require('assert');
 
 // Please change appId and apiKey
-var APP_ID = 'ncnet90v';
-var API_KEY = 'f9479bddbe3b8e96864293bd85d0104947f9fe68';
+var APP_ID = '';
+var API_KEY = '';
 
 var intercom = require('../index.js').create(APP_ID, API_KEY);
 // events api requires v3 endpoint
