@@ -23,13 +23,13 @@ module.exports = function ConfigureGruntService(grunt) {
     docker: {
       app: {
         expand: true,
-        src: ['./index.js', './lib/**/*.js', './lib/*.js'],
+        src: ['./lib/*.js'],
         dest: 'docs',
         options: {
           onlyUpdated: false,
           colourScheme: 'default',
           ignoreHidden: false,
-          sidebarState: true,
+          sidebarState: false,
           exclude: false,
           lineNums: true,
           js: [],
