@@ -1,15 +1,25 @@
 {
   "name": "intercom.io",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "An NodeJS API client for intercom.io",
-  "keywords": ["api", "intercom", "node-intercom", "client", "intercom.io"],
+  "keywords": [
+    "api",
+    "intercom",
+    "node-intercom",
+    "client",
+    "intercom.io"
+  ],
   "author": "Tarun Chaudhry <tarunc92@gmail.com>",
-  "repository": { "type": "git", "url": "git://github.com/tarunc/intercom.io.git" },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tarunc/intercom.io.git"
+  },
   "dependencies": {
-    "request": "2.33.0",
+    "request": "2.34.0",
     "qs": "0.6.6",
     "lodash": "2.4.1",
-    "debug": "0.7.4"
+    "debug": "0.8.1",
+    "q": "1.0.1"
   },
   "devDependencies": {
     "docker": "~0.2.8",

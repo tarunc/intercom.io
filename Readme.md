@@ -35,6 +35,7 @@ var intercom = new Intercom(options);
 // var intercom = require('intercom.io').create(options);
 
 // To create a user
+// Every method supports promises or callbacks.
 intercom.createUser({
   "email" : "ben@intercom.io",
   "user_id" : "7902",
@@ -78,8 +79,8 @@ intercom.createUser({
 });
 
 // To get a user
-intercom.getUser({ "email": "ben@intercom.io" }, function(err, res) {
-  // err is an error object if there was an error
+// (using a promise)
+intercom.getUser({ "email": "ben@intercom.io" }).then(function(res) {
   // res is **JSON** response
   // In this case:
   // {
@@ -100,6 +101,8 @@ intercom.getUser({ "email": "ben@intercom.io" }, function(err, res) {
   //   "last_seen_user_agent": "ie6",
   //   "unsubscribed_from_emails": false
   // }
+}, function(err) {
+  // err is an error object if there was an error
 });
 
 // To get multiple users
@@ -153,10 +156,12 @@ List of supported methods:
 * intercom.getTag
 * intercom.createTag
 * intercom.updateTag
-* intercom.createEvent (beta)
+* intercom.createEvent
 ```
 
 See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://docs.intercom.io/api). See tests for more examples.
+
+__Note__: Every method returns a promise but accepts callbacks too.
 
 ## License
 
