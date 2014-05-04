@@ -3,16 +3,16 @@
 <head>
   <title>IntercomError.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" media="all" href="../doc-style.css" />
-  <script src="../doc-filelist.js"></script>
+  <link rel="stylesheet" media="all" href="doc-style.css" />
+  <script src="doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "lib/IntercomError.js", defaultSidebar = true;
+    var relativeDir = "", thisFile = "lib/IntercomError.js", defaultSidebar = true;
   </script>
-  <script src="../doc-script.js"></script>
-  <script src="../fileSearch.js"></script>
-  <script src="../goToLine.js"></script>
-  <link rel="stylesheet" href="../fileSearch.css" />
-  <link rel="stylesheet" href="../goToLine.css" />
+  <script src="doc-script.js"></script>
+  <script src="fileSearch.js"></script>
+  <script src="goToLine.js"></script>
+  <link rel="stylesheet" href="fileSearch.css" />
+  <link rel="stylesheet" href="goToLine.css" />
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -47,8 +47,8 @@
 </div>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-4" id="line-4">4</a>  <span class="kd">var</span> <span class="nx">util</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;util&#39;</span><span class="p">);</span>
-<a class="line-num" href="#line-5" id="line-5">5</a>  
-<a class="line-num" href="#line-6" id="line-6">6</a>  
+<a class="line-num" href="#line-5" id="line-5">5</a>
+<a class="line-num" href="#line-6" id="line-6">6</a>
 <a class="line-num" href="#line-7" id="line-7">7</a>  </pre></div>
         </td>
       </tr>
@@ -71,16 +71,16 @@
   </div>
 </div>
         </td>
-        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-11" id="line-11">11</a>  
+        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-11" id="line-11">11</a>
 <a class="line-num" href="#line-12" id="line-12">12</a>  <span class="kd">function</span> <span class="nx">AbstractError</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">constr</span><span class="p">)</span> <span class="p">{</span>
 <a class="line-num" href="#line-13" id="line-13">13</a>    <span class="nb">Error</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
 <a class="line-num" href="#line-14" id="line-14">14</a>    <span class="nb">Error</span><span class="p">.</span><span class="nx">captureStackTrace</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">constr</span> <span class="o">||</span> <span class="k">this</span><span class="p">)</span>
-<a class="line-num" href="#line-15" id="line-15">15</a>  
+<a class="line-num" href="#line-15" id="line-15">15</a>
 <a class="line-num" href="#line-16" id="line-16">16</a>    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;AbstractError&#39;</span><span class="p">;</span>
 <a class="line-num" href="#line-17" id="line-17">17</a>    <span class="k">this</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="nx">message</span><span class="p">;</span>
 <a class="line-num" href="#line-18" id="line-18">18</a>  <span class="p">};</span>
-<a class="line-num" href="#line-19" id="line-19">19</a>  
-<a class="line-num" href="#line-20" id="line-20">20</a>  
+<a class="line-num" href="#line-19" id="line-19">19</a>
+<a class="line-num" href="#line-20" id="line-20">20</a>
 <a class="line-num" href="#line-21" id="line-21">21</a>  </pre></div>
         </td>
       </tr>
@@ -96,10 +96,10 @@
   </div>
 </div>
         </td>
-        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-22" id="line-22">22</a>  
+        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-22" id="line-22">22</a>
 <a class="line-num" href="#line-23" id="line-23">23</a>  <span class="nx">util</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">AbstractError</span><span class="p">,</span> <span class="nb">Error</span><span class="p">);</span>
-<a class="line-num" href="#line-24" id="line-24">24</a>  
-<a class="line-num" href="#line-25" id="line-25">25</a>  
+<a class="line-num" href="#line-24" id="line-24">24</a>
+<a class="line-num" href="#line-25" id="line-25">25</a>
 <a class="line-num" href="#line-26" id="line-26">26</a>  </pre></div>
         </td>
       </tr>
@@ -122,14 +122,14 @@
   </div>
 </div>
         </td>
-        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-29" id="line-29">29</a>  
+        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-29" id="line-29">29</a>
 <a class="line-num" href="#line-30" id="line-30">30</a>  <span class="kd">function</span> <span class="nx">IntercomError</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
 <a class="line-num" href="#line-31" id="line-31">31</a>    <span class="nx">AbstractError</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
 <a class="line-num" href="#line-32" id="line-32">32</a>    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;IntercomError&#39;</span><span class="p">;</span>
 <a class="line-num" href="#line-33" id="line-33">33</a>    <span class="k">this</span><span class="p">.</span><span class="nx">message</span> <span class="o">=</span> <span class="nx">message</span><span class="p">;</span>
 <a class="line-num" href="#line-34" id="line-34">34</a>  <span class="p">};</span>
-<a class="line-num" href="#line-35" id="line-35">35</a>  
-<a class="line-num" href="#line-36" id="line-36">36</a>  
+<a class="line-num" href="#line-35" id="line-35">35</a>
+<a class="line-num" href="#line-36" id="line-36">36</a>
 <a class="line-num" href="#line-37" id="line-37">37</a>  </pre></div>
         </td>
       </tr>
@@ -145,11 +145,11 @@
   </div>
 </div>
         </td>
-        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-38" id="line-38">38</a>  
+        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-38" id="line-38">38</a>
 <a class="line-num" href="#line-39" id="line-39">39</a>  <span class="nx">util</span><span class="p">.</span><span class="nx">inherits</span><span class="p">(</span><span class="nx">IntercomError</span><span class="p">,</span> <span class="nx">AbstractError</span><span class="p">);</span>
-<a class="line-num" href="#line-40" id="line-40">40</a>  
-<a class="line-num" href="#line-41" id="line-41">41</a>  
-<a class="line-num" href="#line-42" id="line-42">42</a>  
+<a class="line-num" href="#line-40" id="line-40">40</a>
+<a class="line-num" href="#line-41" id="line-41">41</a>
+<a class="line-num" href="#line-42" id="line-42">42</a>
 <a class="line-num" href="#line-43" id="line-43">43</a>  </pre></div>
         </td>
       </tr>
@@ -165,7 +165,7 @@
   </div>
 </div>
         </td>
-        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-44" id="line-44">44</a>  
+        <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-44" id="line-44">44</a>
 <a class="line-num" href="#line-45" id="line-45">45</a>  <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">IntercomError</span><span class="p">;</span>
 <a class="line-num" href="#line-46" id="line-46">46</a>  </pre></div>
         </td>
