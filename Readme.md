@@ -176,7 +176,7 @@ __Note__: Every method returns a promise but accepts callbacks too.
 
 (The MIT License)
 
-Copyright (c) 2013-2014 Tarun Chaudhry &lt;tarunc92@gmail.com&gt;
+Copyright (c) 2014 Mike McDonald &lt;mcdonald@firebase.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
