@@ -1,6 +1,6 @@
 {
-  "name": "intercom.io",
-  "version": "0.0.8",
+  "name": "intercom",
+  "version": "1.0.0",
   "description": "An NodeJS API client for intercom.io",
   "keywords": [
     "api",
@@ -9,10 +9,10 @@
     "client",
     "intercom.io"
   ],
-  "author": "Tarun Chaudhry <tarunc92@gmail.com>",
+  "author": "Mike McDonald <mcdonald@firebase.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tarunc/intercom.io.git"
+    "url": "git://github.com/mcdonamp/intercom.io.git"
   },
   "dependencies": {
     "request": "2.34.0",
