@@ -145,18 +145,27 @@ List of supported methods:
 ```javascript
 * intercom.getUsers
 * intercom.getUser
+* intercom.viewUser
 * intercom.createUser
 * intercom.updateUser
 * intercom.deleteUser
-* intercom.createImpression
-* intercom.getMessageThread
-* intercom.createMessageThread
-* intercom.replyMessageThread
+* intercom.bulkAddUsers
+* intercom.listCompanies
+* intercom.createCompany
+* intercom.updateCompany
+* intercom.viewCompany
+* intercom.listCompanyUsers
+* intercom.listAdmins
 * intercom.createNote
+* intercom.listNotes
+* intercom.viewNote
 * intercom.getTag
 * intercom.createTag
 * intercom.updateTag
+* intercom.listSegments
+* intercom.viewSegment
 * intercom.createEvent
+* intercom.getCounts
 ```
 
 See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://docs.intercom.io/api). See tests for more examples.
@@ -167,7 +176,7 @@ __Note__: Every method returns a promise but accepts callbacks too.
 
 (The MIT License)
 
-Copyright (c) 2013-2014 Tarun Chaudhry &lt;tarunc92@gmail.com&gt;
+Copyright (c) 2014 Mike McDonald &lt;mcdonald@firebase.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
