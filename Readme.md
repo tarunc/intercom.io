@@ -166,6 +166,7 @@ List of supported methods:
 * intercom.viewSegment
 * intercom.createEvent
 * intercom.getCounts
+* intercom.createUserMessage
 ```
 
 See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://docs.intercom.io/api). See tests for more examples.
