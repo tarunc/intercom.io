@@ -1,8 +1,13 @@
 
+1.0.5 / 2014-10-24
+==================
+
+  * Update `request` dependency
+
 1.0.4 / 2014-10-24
 ==================
 
-  * Update qs dependency
+  * Update `qs` dependency
 
 1.0.3 / 2014-09-20
 ==================
