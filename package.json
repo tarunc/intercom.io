@@ -1,6 +1,6 @@
 {
   "name": "intercom.io",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An NodeJS API client for intercom.io",
   "keywords": [
     "api",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "request": "2.34.0",
-    "qs": "0.6.6",
+    "qs": "2.3.1",
     "lodash": "2.4.1",
     "debug": "0.8.1",
     "q": "1.0.1"
