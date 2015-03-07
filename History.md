@@ -1,4 +1,10 @@
 
+1.0.7 / 2015-3-06
+==================
+
+  * Added JSHINT Support to Gruntfile
+  * Updated `lodash` usage
+
 1.0.5 / 2014-10-24
 ==================
 

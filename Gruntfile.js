@@ -47,6 +47,14 @@ module.exports = function ConfigureGruntService(grunt) {
         stderr: true,
         failOnError: true
       }
+    },
+    jshint: {
+      options: {
+        jshintrc: true
+      },
+      files: {
+        src: ['lib/*.js', 'index.js', 'Gruntfile.js']
+      }
     }
   });
 
