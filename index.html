@@ -67,7 +67,10 @@
   <a class="pilcrow" href="#section-1" id="section-1">&#182;</a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Module dependencies.</p>
+  <div class="summary">
+<p>
+Module dependencies.
+</p>
   </div>
   <div class="body">
   </div>
@@ -86,7 +89,9 @@
 <div class="pilwrap">
   <a class="pilcrow" href="#section-2" id="section-2">&#182;</a>
 </div>
-<p>Represents errors thrown by intercom, see <a href="./IntercomError.js.html">IntercomError.js</a></p>
+<p>
+Represents errors thrown by intercom, see <a href="./IntercomError.js.html">IntercomError.js</a>
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-9" id="line-9">9</a>  
 <a class="line-num" href="#line-10" id="line-10">10</a>      <span class="nx">IntercomError</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./IntercomError&#39;</span><span class="p">),</span>
@@ -102,8 +107,10 @@
 <div class="pilwrap">
   <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
 </div>
-<p>Define some sane default options
-Right now we only have one endpoint for intercom data</p>
+<p>
+Define some sane default options
+Right now we only have one endpoint for intercom data
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-15" id="line-15">15</a>  
 <a class="line-num" href="#line-16" id="line-16">16</a>  <span class="kd">var</span> <span class="nx">defaultOptions</span> <span class="o">=</span> <span class="p">{</span>
@@ -120,7 +127,10 @@ Right now we only have one endpoint for intercom data</p>
   <a class="pilcrow" href="#section-4" id="section-4">&#182;</a>
 </div>
 <div class="dox">
-  <div class="summary"><p><code>Intercom</code> constructor.</p>
+  <div class="summary">
+<p>
+<code>Intercom</code> constructor.
+</p>
   </div>
   <div class="body">
   </div>
@@ -166,8 +176,10 @@ Right now we only have one endpoint for intercom data</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-5" id="section-5">&#182;</a>
 </div>
-<p>Overload the contractor
-Parse out single option objects</p>
+<p>
+Overload the contractor
+Parse out single option objects
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-30" id="line-30">30</a>  
 <a class="line-num" href="#line-31" id="line-31">31</a>    <span class="k">if</span> <span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">isObject</span><span class="p">(</span><span class="nx">appId</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isString</span><span class="p">(</span><span class="nx">appId</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">appId</span><span class="p">.</span><span class="nx">apiKey</span> <span class="o">&amp;&amp;</span> <span class="nx">appId</span><span class="p">.</span><span class="nx">appId</span><span class="p">)</span> <span class="p">{</span>
@@ -185,8 +197,10 @@ Parse out single option objects</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-6" id="section-6">&#182;</a>
 </div>
-<p>Preform some sane validation checks and throw errors
-We need the appId</p>
+<p>
+Preform some sane validation checks and throw errors
+We need the appId
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-38" id="line-38">38</a>  
 <a class="line-num" href="#line-39" id="line-39">39</a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">appId</span><span class="p">)</span> <span class="p">{</span>
@@ -202,7 +216,9 @@ We need the appId</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-7" id="section-7">&#182;</a>
 </div>
-<p>The api key is also required</p>
+<p>
+The api key is also required
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-43" id="line-43">43</a>  
 <a class="line-num" href="#line-44" id="line-44">44</a>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">apiKey</span><span class="p">)</span> <span class="p">{</span>
@@ -218,7 +234,9 @@ We need the appId</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-8" id="section-8">&#182;</a>
 </div>
-<p>Copy over the relavant data</p>
+<p>
+Copy over the relavant data
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-48" id="line-48">48</a>  
 <a class="line-num" href="#line-49" id="line-49">49</a>    <span class="k">this</span><span class="p">.</span><span class="nx">appId</span> <span class="o">=</span> <span class="nx">appId</span><span class="p">;</span>
@@ -233,7 +251,9 @@ We need the appId</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-9" id="section-9">&#182;</a>
 </div>
-<p>Extend the defaults</p>
+<p>
+Extend the defaults
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-52" id="line-52">52</a>  
 <a class="line-num" href="#line-53" id="line-53">53</a>    <span class="k">this</span><span class="p">.</span><span class="nx">options</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">defaults</span><span class="p">(</span><span class="nx">options</span> <span class="o">||</span> <span class="p">{},</span> <span class="nx">Intercom</span><span class="p">.</span><span class="nx">defaultOptions</span><span class="p">);</span>
@@ -247,7 +267,9 @@ We need the appId</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-10" id="section-10">&#182;</a>
 </div>
-<p>Contruct the endpoint with the correct auth from the appId and apiKey</p>
+<p>
+Contruct the endpoint with the correct auth from the appId and apiKey
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-55" id="line-55">55</a>  
 <a class="line-num" href="#line-56" id="line-56">56</a>    <span class="k">this</span><span class="p">.</span><span class="nx">endpoint</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">;</span>
@@ -263,7 +285,10 @@ We need the appId</p>
   <a class="pilcrow" href="#section-11" id="section-11">&#182;</a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Expose <code>defaultOptions</code> for the intercom library so that this is changable.</p>
+  <div class="summary">
+<p>
+Expose <code>defaultOptions</code> for the intercom library so that this is changable.
+</p>
   </div>
   <div class="body">
   </div>
@@ -282,15 +307,27 @@ We need the appId</p>
   <a class="pilcrow" href="#section-12" id="section-12">&#182;</a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Helper method to create an instance easily</p>
+  <div class="summary">
+<p>
+Helper method to create an instance easily
+</p>
   </div>
-  <div class="body"><p>Enables use like this:</p>
+  <div class="body">
+<p>
+Enables use like this:
+</p>
 
-<p><code>var intercom = require('intercom.io').create("your_APP_ID", "your_API_key");</code></p>
+<p>
+<code>var intercom = require('intercom.io').create("your_APP_ID", "your_API_key");</code>
+</p>
 
-<p>or</p>
+<p>
+or
+</p>
 
-<p><code>var intercom = require('intercom.io').create(options);</code></p>
+<p>
+<code>var intercom = require('intercom.io').create(options);</code>
+</p>
   </div>
   <div class="details">
     <div class="dox_tag_title">Params</div>
@@ -339,9 +376,12 @@ We need the appId</p>
   <a class="pilcrow" href="#section-13" id="section-13">&#182;</a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The main method that makes all the requests to intercom.
+  <div class="summary">
+<p>
+The main method that makes all the requests to intercom.
 This method deals with the intercom api and can be used
-to make requests to the intercom api.</p>
+to make requests to the intercom api.
+</p>
   </div>
   <div class="body">
   </div>
@@ -380,8 +420,10 @@ to make requests to the intercom api.</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-14" id="section-14">&#182;</a>
 </div>
-<p>Intercom.io now requires parameters in JSON
-requestOptions.form = parameters;</p>
+<p>
+Intercom.io now requires parameters in JSON
+requestOptions.form = parameters;
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-109" id="line-109">109</a>  
 <a class="line-num" href="#line-110" id="line-110">110</a>      <span class="nx">requestOptions</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">parameters</span><span class="p">);</span>
@@ -405,7 +447,9 @@ requestOptions.form = parameters;</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-15" id="section-15">&#182;</a>
 </div>
-<p>create a promise to return</p>
+<p>
+create a promise to return
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-122" id="line-122">122</a>  
 <a class="line-num" href="#line-123" id="line-123">123</a>    <span class="kd">var</span> <span class="nx">deferred</span> <span class="o">=</span> <span class="nx">Q</span><span class="p">.</span><span class="nx">defer</span><span class="p">();</span>
@@ -421,7 +465,9 @@ requestOptions.form = parameters;</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-16" id="section-16">&#182;</a>
 </div>
-<p>Reject the promise</p>
+<p>
+Reject the promise
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-127" id="line-127">127</a>  
 <a class="line-num" href="#line-128" id="line-128">128</a>        <span class="k">return</span> <span class="nx">deferred</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
@@ -436,7 +482,9 @@ requestOptions.form = parameters;</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-17" id="section-17">&#182;</a>
 </div>
-<p>Try to parse the data</p>
+<p>
+Try to parse the data
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-131" id="line-131">131</a>  
 <a class="line-num" href="#line-132" id="line-132">132</a>      <span class="kd">var</span> <span class="nx">parsed</span><span class="p">;</span>
@@ -458,7 +506,9 @@ requestOptions.form = parameters;</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-18" id="section-18">&#182;</a>
 </div>
-<p>Reject the promise</p>
+<p>
+Reject the promise
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-142" id="line-142">142</a>  
 <a class="line-num" href="#line-143" id="line-143">143</a>            <span class="k">return</span> <span class="nx">deferred</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
@@ -473,8 +523,10 @@ requestOptions.form = parameters;</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-19" id="section-19">&#182;</a>
 </div>
-<p>Reject the promise
-return deferred.reject(exception);</p>
+<p>
+Reject the promise
+return deferred.reject(exception);
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-147" id="line-147">147</a>  
 <a class="line-num" href="#line-148" id="line-148">148</a>        <span class="p">}</span>
@@ -489,7 +541,9 @@ return deferred.reject(exception);</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-20" id="section-20">&#182;</a>
 </div>
-<p>Resolve the promise</p>
+<p>
+Resolve the promise
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-151" id="line-151">151</a>  
 <a class="line-num" href="#line-152" id="line-152">152</a>      <span class="k">return</span> <span class="nx">deferred</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">parsed</span> <span class="o">||</span> <span class="nx">data</span><span class="p">);</span>
@@ -504,7 +558,9 @@ return deferred.reject(exception);</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-21" id="section-21">&#182;</a>
 </div>
-<p>Return the promise and promisify any callback provided</p>
+<p>
+Return the promise and promisify any callback provided
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-155" id="line-155">155</a>  
 <a class="line-num" href="#line-156" id="line-156">156</a>    <span class="k">return</span> <span class="nx">deferred</span><span class="p">.</span><span class="nx">promise</span><span class="p">.</span><span class="nx">nodeify</span><span class="p">(</span><span class="nx">cb</span><span class="p">);</span>
@@ -520,7 +576,10 @@ return deferred.reject(exception);</p>
   <a class="pilcrow" href="#section-22" id="section-22">&#182;</a>
 </div>
 <div class="dox">
-  <div class="summary"><p>GETs all the pages of an Intercom resource in parallel.</p>
+  <div class="summary">
+<p>
+GETs all the pages of an Intercom resource in parallel.
+</p>
   </div>
   <div class="body">
   </div>
@@ -560,9 +619,11 @@ return deferred.reject(exception);</p>
 <div class="pilwrap">
   <a class="pilcrow" href="#section-23" id="section-23">&#182;</a>
 </div>
-<p>TODO Add a progress indicator when each page is retrieved
+<p>
+TODO Add a progress indicator when each page is retrieved
 TODO Limit concurrency, Q can fail when making hundreds of requests in parallel
-TODO Add rate limiting (max 500 req/min to Intercom)</p>
+TODO Add rate limiting (max 500 req/min to Intercom)
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-172" id="line-172">172</a>  
 <a class="line-num" href="#line-173" id="line-173">173</a>    <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
@@ -597,7 +658,10 @@ TODO Add rate limiting (max 500 req/min to Intercom)</p>
   <a class="pilcrow" href="#section-24" id="section-24">&#182;</a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Helper method to create dates for intercom easily</p>
+  <div class="summary">
+<p>
+Helper method to create dates for intercom easily
+</p>
   </div>
   <div class="body">
   </div>
@@ -728,10 +792,13 @@ TODO Add rate limiting (max 500 req/min to Intercom)</p>
   <a class="pilcrow" href="#section-27" id="section-27">&#182;</a>
 </div>
 <div class="dox">
-  <div class="summary"><p>// Functionality doesn't currently exist
+  <div class="summary">
+<p>
+// Functionality doesn't currently exist
 Intercom.prototype.deleteCompany = function(companyObj, cb) {
 // return this.request('DELETE', 'companies', companyObj, cb);
-};</p>
+};
+</p>
   </div>
   <div class="body">
   </div>
@@ -830,7 +897,9 @@ Intercom.prototype.deleteCompany = function(companyObj, cb) {
 <div class="pilwrap">
   <a class="pilcrow" href="#section-31" id="section-31">&#182;</a>
 </div>
-<p>Note: tagObj should be empty</p>
+<p>
+Note: tagObj should be empty
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-320" id="line-320">320</a>  
 <a class="line-num" href="#line-321" id="line-321">321</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="nx">tagObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
@@ -926,7 +995,9 @@ Intercom.prototype.deleteCompany = function(companyObj, cb) {
 <div class="pilwrap">
   <a class="pilcrow" href="#section-36" id="section-36">&#182;</a>
 </div>
-<p>(NOTE: the Conversations API is only available to Apps on the Starter and Premium plans)</p>
+<p>
+(NOTE: the Conversations API is only available to Apps on the Starter and Premium plans)
+</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre><a class="line-num" href="#line-349" id="line-349">349</a>  
 <a class="line-num" href="#line-350" id="line-350">350</a>    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;messages&#39;</span><span class="p">,</span> <span class="nx">messageObj</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
@@ -943,7 +1014,10 @@ Intercom.prototype.deleteCompany = function(companyObj, cb) {
   <a class="pilcrow" href="#section-37" id="section-37">&#182;</a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Expose <code>Intercom</code> Library.</p>
+  <div class="summary">
+<p>
+Expose <code>Intercom</code> Library.
+</p>
   </div>
   <div class="body">
   </div>
