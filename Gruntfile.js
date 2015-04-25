@@ -67,12 +67,25 @@ module.exports = function ConfigureGruntService(grunt) {
     copy: {
       docs: {
         files: [{
-          src: ['docs/lib/intercom.io.js.html'],
+          src: './docs/intercom.io.js.html',
           dest: './docs/index.html'
-        }, {
-          src: ['docs/lib/*.html'],
-          dest: './docs/'
         }]
+      }
+    },
+    'string-replace': {
+      docs: {
+        files: [{
+          expand: true,
+          cwd: 'docs/lib/',
+          src: '*',
+          dest: 'docs/'
+        }],
+        options: {
+          replacements: [{
+            pattern: /\.\.\//g,
+            replacement: './'
+          }]
+        }
       }
     }
   });
@@ -87,7 +100,7 @@ module.exports = function ConfigureGruntService(grunt) {
   // Running `grunt doc` will generate documentation for Quad.
   // The documentation will be put into the `./docs` folder in project's root
   // folder.
-  grunt.registerTask('doc', ['docker', 'shell:sweetenDocker', 'copy:docs']);
+  grunt.registerTask('doc', ['docker', 'shell:sweetenDocker', 'string-replace:docs', 'copy:docs', 'gh-pages']);
   // @note `grunt docs` provides an alias for the `grunt doc` task
   grunt.registerTask('docs', ['doc']);
 };

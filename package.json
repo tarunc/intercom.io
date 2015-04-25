@@ -29,6 +29,7 @@
     "grunt-docker": "0.0.5",
     "grunt-gh-pages": "~0.10.0",
     "grunt-shell": "~0.3.0",
+    "grunt-string-replace": "^1.1.1",
     "matchdep": "~0.1.1"
   },
   "main": "index"
