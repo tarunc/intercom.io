@@ -1,6 +1,6 @@
 {
   "name": "intercom.io",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An NodeJS API client for intercom.io",
   "keywords": [
     "api",
@@ -24,8 +24,10 @@
   "devDependencies": {
     "docker": "~0.2.8",
     "grunt": "~0.4.1",
+    "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-docker": "0.0.5",
+    "grunt-gh-pages": "~0.10.0",
     "grunt-shell": "~0.3.0",
     "matchdep": "~0.1.1"
   },
