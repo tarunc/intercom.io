@@ -1,8 +1,8 @@
 var assert = require('assert');
 
 // Please change appId and apiKey
-var APP_ID = '';
-var API_KEY = '';
+var APP_ID = 'zx4dswm8';
+var API_KEY = '98eb4a05602ad0840ddeb6bb603d889ef7b083ab';
 
 var intercom = require('../index.js').create(APP_ID, API_KEY);
 // events api requires v3 endpoint
@@ -59,16 +59,16 @@ describe('Intercom', function(){
   });
     
   describe('#getUser()', function(){
-      it('should get a specific user', function(done){
-        intercom.getUser({ email: 'somebody@example.com' }, function (err, res) {
-          if (err) {
-            throw err;
-          }
-  
-          console.log(res);
-          done();
-        });
+    it('should get a specific user', function(done){
+      intercom.getUser({ email: 'somebody@example.com' }, function (err, res) {
+        if (err) {
+          throw err;
+        }
+
+        console.log(res);
+        done();
       });
+    });
   });
   
   describe('#createEvent()', function(){
@@ -103,7 +103,31 @@ describe('Intercom', function(){
       });
     });
   });
-  
-  
+
+  describe('#listConversations()', function(){
+    it('should list out conversations', function(done){
+      intercom.listConversations({}, function (err, res) {
+        if (err) {
+          throw err;
+        }
+
+        console.log(res);
+        done();
+      });
+    });
+  });
+
+  describe('#getConversation()', function(){
+    it('should show a specific conversation', function(done){
+      intercom.getConversation({ id: 123 }, function (err, res) {
+        if (err) {
+          throw err;
+        }
+
+        console.log(res);
+        done();
+      });
+    });
+  });
 });
 
