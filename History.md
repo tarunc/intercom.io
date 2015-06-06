@@ -1,15 +1,20 @@
 
-1.0.9 / 2015-5-27
+1.0.10 / 2015-06-05
+==================
+
+  * Update `deleteUser`
+
+1.0.9 / 2015-05-27
 ==================
 
   * Update `deleteTag` and `updateTag`
 
-1.0.8 / 2015-4-25
+1.0.8 / 2015-04-25
 ==================
 
   * Added `intercom.getPages` support
 
-1.0.7 / 2015-3-06
+1.0.7 / 2015-03-06
 ==================
 
   * Added JSHINT Support to Gruntfile
