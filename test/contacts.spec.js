@@ -32,7 +32,7 @@ global.Replay  = require('replay');
 Replay.fixtures = __dirname + '/fixtures/replay';
 
 // Set to 'record' to record new callouts
-Replay.mode = 'bloody';
+Replay.mode = 'replay';
 
 
 
@@ -95,8 +95,8 @@ describe('Contacts', function(){
   describe('#convertContact()', function() {
 
     var contact = {
-      name: 'Ray Velcoro',
-      email: 'ray@hbo.com'
+      name: 'Frank Semyon',
+      email: 'frank@hbo.com'
     };
 
     it('should convert the contact', function(){
@@ -107,7 +107,7 @@ describe('Contacts', function(){
           user: { email: contact.email }
         }).should.be.fulfilled
 
-      })
+      }).catch(function(e) { console.log(e)})
 
       .then(function(user){
         user.type.should.equal('user');

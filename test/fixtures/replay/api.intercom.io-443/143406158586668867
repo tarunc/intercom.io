@@ -1,0 +1,29 @@
+POST /contacts
+accept: application/json
+content-type: application/json
+host: api.intercom.io
+authorization: Basic eng0ZHN3bTg6OThlYjRhMDU2MDJhZDA4NDBkZGViNmJiNjAzZDg4OWVmN2IwODNhYg==
+body: {\"name\":\"Frank Semyon\",\"email\":\"frank@hbo.com\"}
+
+HTTP/1.1 200 undefined
+cache-control: max-age=0, private, must-revalidate
+content-type: application/json; charset=utf-8
+date: Thu, 11 Jun 2015 22:26:25 GMT
+etag: "d0c6d7e443465fc6d2653b13e777d8b8"
+server: nginx
+status: 200 OK
+strict-transport-security: max-age=31536000
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-intercom-version: 253943ca8ca2cb8ce9be59a9f0a7d93f88fc7aa2
+x-ratelimit-limit: 500
+x-ratelimit-remaining: 500
+x-ratelimit-reset: 1434061620
+x-request-id: c03d8f35-0f03-4331-9a3d-17410cff3a57
+x-runtime: 0.169507
+x-xss-protection: 1; mode=block
+transfer-encoding: chunked
+connection: keep-alive
+
+{"type":"contact","id":"557a0b11ec6b03ca89001434","user_id":"7d41fe2c-d1c2-4fc2-92cb-05176afb225c","anonymous":true,"email":"frank@hbo.com","name":"Frank Semyon","pseudonym":"Blue Bowtie","avatar":{"type":"avatar","image_url":null},"app_id":"zx4dswm8","companies":{"type":"company.list","companies":[]},"location_data":{},"last_request_at":null,"last_seen_ip":null,"created_at":1434061585,"remote_created_at":null,"signed_up_at":null,"updated_at":1434061585,"session_count":0,"social_profiles":{"type":"social_profile.list","social_profiles":[]},"unsubscribed_from_emails":false,"user_agent_data":null,"tags":{"type":"tag.list","tags":[]},"segments":{"type":"segment.list","segments":[]},"custom_attributes":{}}
