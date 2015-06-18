@@ -3,7 +3,7 @@
 
 An API client in Node.JS for talking to intercom.io. This package implements the complete API for talking with the intercom.io API -- users, messages, impressions, tags, notes.
 
-There complete docs can be found here - http://docs.intercom.io/api
+There complete docs can be found here - http://doc.intercom.io/api
 
 ## Installation
 
@@ -14,7 +14,7 @@ npm install --save intercom.io
 
 ## Usage
 
-See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://docs.intercom.io/api).
+See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://doc.intercom.io/api).
 
 ```javascript
 var Intercom = require('intercom.io');
@@ -169,7 +169,7 @@ List of supported methods:
 * intercom.createUserMessage
 ```
 
-See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://docs.intercom.io/api). See tests for more examples.
+See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://doc.intercom.io/api). See tests for more examples.
 
 __Note__: Every method returns a promise but accepts callbacks too.
 
