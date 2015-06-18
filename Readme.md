@@ -169,7 +169,7 @@ List of supported methods:
 * intercom.createUserMessage
 ```
 
-See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://docs.intercom.io/api). See tests for more examples.
+See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://doc.intercom.io/api). See tests for more examples.
 
 __Note__: Every method returns a promise but accepts callbacks too.
 
