@@ -97,7 +97,7 @@ module.exports = function ConfigureGruntService(grunt) {
   grunt.registerTask('default', ['jshint:app']);
 
   // ### Doc task(s).
-  // Running `grunt doc` will generate documentation for Quad.
+  // Running `grunt doc` will generate documentation for intercom.io.
   // The documentation will be put into the `./docs` folder in project's root
   // folder.
   grunt.registerTask('doc', ['docker', 'shell:sweetenDocker', 'string-replace:docs', 'copy:docs', 'gh-pages']);
