@@ -1,6 +1,6 @@
 {
   "name": "intercom.io",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "An NodeJS API client for intercom.io",
   "keywords": [
     "api",
