@@ -17,7 +17,7 @@
   "homepage": "https://github.com/tarunc/intercom.io",
   "license": "MIT",
   "dependencies": {
-    "debug": "2.1.0",
+    "debug": "2.2.0",
     "lodash": "2.4.1",
     "q": "1.0.1",
     "qs": "2.3.1",
