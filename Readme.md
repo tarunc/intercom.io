@@ -1,9 +1,9 @@
 
 # intercom.io
-
+http://tarunc.github.io/intercom.io/
 An API client in Node.JS for talking to intercom.io. This package implements the complete API for talking with the intercom.io API -- users, messages, impressions, tags, notes.
 
-There complete docs can be found here - http://doc.intercom.io/api
+There complete docs can be found here - http://doc.intercom.io/api. See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation
 
 ## Installation
 
@@ -141,7 +141,7 @@ intercom.getUsers({
 });
 ```
 
-List of supported methods: (More methods no)
+List of supported methods: (More methods on [docs](http://tarunc.github.io/intercom.io/).)
 ```javascript
 * intercom.request
 * intercom.getPages
