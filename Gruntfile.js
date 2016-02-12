@@ -32,8 +32,7 @@ module.exports = function ConfigureGruntService(grunt) {
           sidebarState: false,
           exclude: false,
           lineNums: true,
-          js: [],
-          css: [],
+          multiLineOnly: false,
           extras: ['fileSearch', 'goToLine']
         }
       }
@@ -94,13 +93,13 @@ module.exports = function ConfigureGruntService(grunt) {
   // ### Default task(s).
   // Just running `grunt` will load the default tasks.
   // For now, the only default tasks are `jshint:app`
-  grunt.registerTask('default', ['jshint:app']);
+  grunt.registerTask('default', ['jshint']);
 
   // ### Doc task(s).
   // Running `grunt doc` will generate documentation for intercom.io.
   // The documentation will be put into the `./docs` folder in project's root
   // folder.
-  grunt.registerTask('doc', ['docker', 'shell:sweetenDocker', 'string-replace:docs', 'copy:docs', 'gh-pages']);
+  grunt.registerTask('doc', ['docker:app', 'shell:sweetenDocker', 'string-replace:docs', 'copy:docs', 'gh-pages']);
   // @note `grunt docs` provides an alias for the `grunt doc` task
   grunt.registerTask('docs', ['doc']);
 };
