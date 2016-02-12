@@ -16,12 +16,12 @@ var chaiSubset = require('chai-subset');
 chai.use(chaiSubset);
 
 // Chai Promise Setup
-var chaiAsPromised = require("chai-as-promised");
+var chaiAsPromised = require('chai-as-promised');
     chai.use(chaiAsPromised);
 
 // Sinon Setup
-global.sinon = require("sinon");
-var sinonChai = require("sinon-chai");
+global.sinon = require('sinon');
+var sinonChai = require('sinon-chai');
 
 
 global.should = chai.should();

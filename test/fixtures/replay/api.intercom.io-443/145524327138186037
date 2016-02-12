@@ -1,0 +1,30 @@
+POST /events
+accept: application/json
+content-type: application/json
+host: api.intercom.io
+authorization: Basic eng0ZHN3bTg6OThlYjRhMDU2MDJhZDA4NDBkZGViNmJiNjAzZDg4OWVmN2IwODNhYg==
+body: {\"event_name\":\"some event\",\"created\":1455243270,\"email\":\"somebody@example.com\"}
+
+HTTP/1.1 202 Accepted
+cache-control: no-cache
+content-security-policy-report-only: default-src 'self'; connect-src 'self' api-iam.intercom.io api-ping.intercom.io nexus-websocket-a.intercom.io nexus-websocket-b.intercom.io nexus-long-poller-a.intercom.io nexus-long-poller-b.intercom.io wss://nexus-websocket-a.intercom.io wss://nexus-websocket-b.intercom.io uploads.intercomcdn.com api.amplitude.com js.logentries.com wss://ws.pusherapp.com *.pusher.com *.tiles.mapbox.com; font-src 'self' data: https:; frame-src 'self' fast.wistia.net js.stripe.com staticxx.facebook.com www.facebook.com app.datadoghq.com; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; script-src 'self' js.intercomcdn.com static.intercomassets.com widget.intercom.io api.tiles.mapbox.com bam.nr-data.net connect.facebook.net js-agent.newrelic.com js.stripe.com netdna.bootstrapcdn.com www.googleadservices.com www.google-analytics.com platform.twitter.com *.adroll.com *.cloudfront.net *.pusher.com; style-src 'self' 'unsafe-inline' static.intercomassets.com static.intercomcdn.com api.tiles.mapbox.com maxcdn.bootstrapcdn.com netdna.bootstrapcdn.com fonts.googleapis.com; report-uri https://app.getsentry.com/api/66205/csp-report/?sentry_version=5&sentry_key=2b8577b0df7747488e37ae35375a6772
+content-type: application/json
+date: Fri, 12 Feb 2016 02:14:31 GMT
+server: nginx
+status: 202 Accepted
+strict-transport-security: max-age=31557600
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-intercom-version: 7867eec47fe6aa002d299569e8286264a597173f
+x-intercomrade: Like APIs? Check out https://www.intercom.io/careers!
+x-ratelimit-limit: 500
+x-ratelimit-remaining: 500
+x-ratelimit-reset: 1455243300
+x-request-id: 1357e51c-723e-4741-849f-6f429b6edff8
+x-runtime: 0.072016
+x-xss-protection: 1; mode=block
+content-length: 1
+connection: Close
+
+ 

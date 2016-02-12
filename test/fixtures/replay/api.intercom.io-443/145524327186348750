@@ -1,0 +1,30 @@
+DELETE /users
+accept: application/json
+content-type: application/json
+host: api.intercom.io
+authorization: Basic eng0ZHN3bTg6OThlYjRhMDU2MDJhZDA4NDBkZGViNmJiNjAzZDg4OWVmN2IwODNhYg==
+body: {\"email\":\"somebody@example.com\"}
+
+HTTP/1.1 200 OK
+cache-control: max-age=0, private, must-revalidate
+content-security-policy-report-only: default-src 'self'; connect-src 'self' api-iam.intercom.io api-ping.intercom.io nexus-websocket-a.intercom.io nexus-websocket-b.intercom.io nexus-long-poller-a.intercom.io nexus-long-poller-b.intercom.io wss://nexus-websocket-a.intercom.io wss://nexus-websocket-b.intercom.io uploads.intercomcdn.com api.amplitude.com js.logentries.com wss://ws.pusherapp.com *.pusher.com *.tiles.mapbox.com; font-src 'self' data: https:; frame-src 'self' fast.wistia.net js.stripe.com staticxx.facebook.com www.facebook.com app.datadoghq.com; img-src 'self' data: blob: https:; media-src 'self' data: blob: https:; script-src 'self' js.intercomcdn.com static.intercomassets.com widget.intercom.io api.tiles.mapbox.com bam.nr-data.net connect.facebook.net js-agent.newrelic.com js.stripe.com netdna.bootstrapcdn.com www.googleadservices.com www.google-analytics.com platform.twitter.com *.adroll.com *.cloudfront.net *.pusher.com; style-src 'self' 'unsafe-inline' static.intercomassets.com static.intercomcdn.com api.tiles.mapbox.com maxcdn.bootstrapcdn.com netdna.bootstrapcdn.com fonts.googleapis.com; report-uri https://app.getsentry.com/api/66205/csp-report/?sentry_version=5&sentry_key=2b8577b0df7747488e37ae35375a6772
+content-type: application/json; charset=utf-8
+date: Fri, 12 Feb 2016 02:14:31 GMT
+etag: "fb0fa383857e55dcbc2dd57808f7d3eb"
+server: nginx
+status: 200 OK
+strict-transport-security: max-age=31557600
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-intercom-version: 7867eec47fe6aa002d299569e8286264a597173f
+x-ratelimit-limit: 500
+x-ratelimit-remaining: 496
+x-ratelimit-reset: 1455243300
+x-request-id: 9b6f6501-d397-427d-89ae-1dc4d1421dd7
+x-runtime: 0.214412
+x-xss-protection: 1; mode=block
+content-length: 1545
+connection: Close
+
+{"type":"user","id":"5550e85f9251fbda5c0007cd","user_id":null,"anonymous":false,"email":"somebody@example.com","name":"Me!","pseudonym":null,"avatar":{"type":"avatar","image_url":"https://secure.gravatar.com/avatar/ba95799ceedd18316033196cb243cfc0?s=24&d=identicon"},"app_id":"zx4dswm8","companies":{"type":"company.list","companies":[]},"location_data":{"type":"location_data","city_name":"Mukilteo","continent_code":"NA","country_name":"United States","latitude":47.913,"longitude":-122.3042,"postal_code":"98275","region_name":"Washington","timezone":"America/Los_Angeles","country_code":"USA"},"last_request_at":null,"last_seen_ip":"1.2.3.4","created_at":1431365727,"remote_created_at":1455243269,"signed_up_at":1455243269,"updated_at":1455243271,"session_count":0,"social_profiles":{"type":"social_profile.list","social_profiles":[{"type":"social_profile","name":"Foursquare","id":"11250300","username":null,"url":"https://foursquare.com/user/11250300"},{"type":"social_profile","name":"Twitter","id":"369173452","username":"VMAmaster","url":"https://twitter.com/VMAmaster"},{"type":"social_profile","name":"Flickr","id":"41222823@N00","username":"gaessset","url":"https://www.flickr.com/people/41222823@N00"},{"type":"social_profile","name":"Myspace","id":"68681281","username":null,"url":"https://myspace.com/68681281"}]},"unsubscribed_from_emails":false,"user_agent_data":"ie6","tags":{"type":"tag.list","tags":[]},"segments":{"type":"segment.list","segments":[{"type":"segment","id":"53a804ea78992f3ee0000016"}]},"custom_attributes":{}}
