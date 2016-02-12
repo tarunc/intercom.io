@@ -141,8 +141,11 @@ intercom.getUsers({
 });
 ```
 
-List of supported methods:
+List of supported methods: (More methods no)
 ```javascript
+* intercom.request
+* intercom.getPages
+* intercom.date
 * intercom.getUsers
 * intercom.getUser
 * intercom.viewUser
@@ -150,10 +153,17 @@ List of supported methods:
 * intercom.updateUser
 * intercom.deleteUser
 * intercom.bulkAddUsers
+* intercom.createContact
+* intercom.updateContact
+* intercom.deleteContact
+* intercom.getContact
+* intercom.viewContact
+* intercom.getContacts
+* intercom.convertContact
 * intercom.listCompanies
+* intercom.viewCompany
 * intercom.createCompany
 * intercom.updateCompany
-* intercom.viewCompany
 * intercom.listCompanyUsers
 * intercom.listAdmins
 * intercom.createNote
@@ -161,12 +171,15 @@ List of supported methods:
 * intercom.viewNote
 * intercom.getTag
 * intercom.createTag
+* intercom.deleteTag
 * intercom.updateTag
 * intercom.listSegments
 * intercom.viewSegment
 * intercom.createEvent
 * intercom.getCounts
 * intercom.createUserMessage
+* intercom.listConversations
+* intercom.getConversation
 ```
 
 See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://doc.intercom.io/api). See tests for more examples.
