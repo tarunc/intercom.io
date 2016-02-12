@@ -1,0 +1,33 @@
+lib-cov
+*.seed
+*.swp
+*.tmp
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.o
+*~
+
+pids
+logs
+results
+
+node_modules
+npm-debug.log
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+.grunt
