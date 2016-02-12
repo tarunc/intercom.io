@@ -8,6 +8,8 @@ var intercom = require('../index.js').create(APP_ID, API_KEY);
 // events api requires v3 endpoint
 var intercom_v3 = require('../index.js').create(APP_ID, API_KEY, {endpoint: 'https://api.intercom.io/'});
 
+
+
 describe('Intercom', function(){
   describe('#getUsers()', function(){
     it('should get all users', function(done){
@@ -27,7 +29,7 @@ describe('Intercom', function(){
       intercom.createUser({
         'email' : 'somebody@example.com',
         'name' : 'Somebody',
-        'created_at' : (new Date() / 1000),
+        'created_at' : seconds_since_epoch(),
 
         'last_seen_ip' : '1.2.3.4',
         'last_seen_user_agent' : 'ie6'
@@ -57,7 +59,7 @@ describe('Intercom', function(){
       });
     });
   });
-    
+
   describe('#getUser()', function(){
     it('should get a specific user', function(done){
       intercom.getUser({ email: 'somebody@example.com' }, function (err, res) {
@@ -70,12 +72,12 @@ describe('Intercom', function(){
       });
     });
   });
-  
+
   describe('#createEvent()', function(){
     it('should create a user event', function(done){
       intercom_v3.createEvent({
         'event_name' : 'some event',
-        'created' : (new Date() / 1000),
+        'created' : seconds_since_epoch(),
         'email' : 'somebody@example.com'
       }, function (err, res) {
         if (err) {
@@ -88,7 +90,7 @@ describe('Intercom', function(){
       });
     });
   });
-    
+
   describe('#deleteUser()', function(){
     it('should delete a specific user', function(done){
       intercom.deleteUser({
@@ -119,7 +121,7 @@ describe('Intercom', function(){
 
   describe('#getConversation()', function(){
     it('should show a specific conversation', function(done){
-      intercom.getConversation({ id: 123 }, function (err, res) {
+      intercom.getConversation({ id: 858210458 }, function (err, res) {
         if (err) {
           throw err;
         }
@@ -131,3 +133,5 @@ describe('Intercom', function(){
   });
 });
 
+
+function seconds_since_epoch(){ return Math.floor( Date.now() / 1000 ) }
