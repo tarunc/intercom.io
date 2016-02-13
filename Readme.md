@@ -1,7 +1,7 @@
 # intercom.io
 http://tarunc.github.io/intercom.io/
 
-An API client in Node.JS for talking to intercom.io. This package implements the complete API for talking with the intercom.io API -- users, messages, impressions, tags, notes.
+An API client in Node.JS for talking to intercom.io. This package implements the complete API for talking with the intercom.io API -- users, messages, impressions, tags, notes and more. This library's methods support promises (thru [q](https://github.com/kriskowal/q)) and node style callbacks (`methodName(function(err, data))`).
 
 There complete docs can be found here - http://doc.intercom.io/api. See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation of this library and all the methods that we support. See tests for more examples.
 
@@ -14,7 +14,7 @@ npm install --save intercom.io
 
 ## Usage
 
-See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://doc.intercom.io/api).
+See [this library's docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://doc.intercom.io/api).
 
 ```javascript
 var Intercom = require('intercom.io');
@@ -143,9 +143,7 @@ intercom.getUsers({
 
 List of supported methods: (More methods on [docs](http://tarunc.github.io/intercom.io/).)
 ```javascript
-* intercom.request
 * intercom.getPages
-* intercom.date
 * intercom.getUsers
 * intercom.getUser
 * intercom.viewUser
@@ -180,6 +178,9 @@ List of supported methods: (More methods on [docs](http://tarunc.github.io/inter
 * intercom.createUserMessage
 * intercom.listConversations
 * intercom.getConversation
+* intercom.replyConversation
+* intercom.markConversationAsRead
+* intercom.closeConversation
 ```
 
 See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation and the [intercom API documentation](http://doc.intercom.io/api). See tests for more examples.

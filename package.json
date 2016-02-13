@@ -1,6 +1,6 @@
 {
   "name": "intercom.io",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "An NodeJS API client for intercom.io",
   "keywords": [
     "api",
@@ -17,11 +17,11 @@
   "homepage": "https://github.com/tarunc/intercom.io",
   "license": "MIT",
   "dependencies": {
-    "debug": "2.2.0",
-    "lodash": "4.3.0",
-    "q": "1.4.1",
-    "qs": "6.1.0",
-    "request": "^2.69.0"
+    "debug": "~2.2.0",
+    "lodash": "~4.3.0",
+    "q": "~1.4.1",
+    "qs": "~6.1.0",
+    "request": "~2.69.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
