@@ -10,9 +10,9 @@ var intercom_v3 = require('../index.js').create(APP_ID, API_KEY, {endpoint: 'htt
 
 
 
-describe('Intercom', function(){
-  describe('#getUsers()', function(){
-    it('should get all users', function(done){
+describe('Intercom', function() {
+  describe('#getUsers()', function() {
+    it('should get all users', function(done) {
       intercom.getUsers(function (err, res) {
         if (err) {
           throw err;
@@ -24,8 +24,8 @@ describe('Intercom', function(){
     });
   });
 
-  describe('#createUser()', function(){
-    it('should create a specific user', function(done){
+  describe('#createUser()', function() {
+    it('should create a specific user', function(done) {
       intercom.createUser({
         'email' : 'somebody@example.com',
         'name' : 'Somebody',
@@ -44,11 +44,11 @@ describe('Intercom', function(){
     });
   });
 
-  describe('#updateUser()', function(){
-    it('should update a specific user', function(done){
+  describe('#updateUser()', function() {
+    it('should update a specific user', function(done) {
       intercom.updateUser({
         'email' : 'somebody@example.com',
-        'name' : 'Me!',
+        'name' : 'Me!'
       }, function (err, res) {
         if (err) {
           throw err;
@@ -60,8 +60,8 @@ describe('Intercom', function(){
     });
   });
 
-  describe('#getUser()', function(){
-    it('should get a specific user', function(done){
+  describe('#getUser()', function() {
+    it('should get a specific user', function(done) {
       intercom.getUser({ email: 'somebody@example.com' }, function (err, res) {
         if (err) {
           throw err;
@@ -73,8 +73,8 @@ describe('Intercom', function(){
     });
   });
 
-  describe('#createEvent()', function(){
-    it('should create a user event', function(done){
+  describe('#createEvent()', function() {
+    it('should create a user event', function(done) {
       intercom_v3.createEvent({
         'event_name' : 'some event',
         'created' : seconds_since_epoch(),
@@ -91,8 +91,8 @@ describe('Intercom', function(){
     });
   });
 
-  describe('#deleteUser()', function(){
-    it('should delete a specific user', function(done){
+  describe('#deleteUser()', function() {
+    it('should delete a specific user', function(done) {
       intercom.deleteUser({
         'email' : 'somebody@example.com'
       }, function (err, res) {
@@ -106,8 +106,8 @@ describe('Intercom', function(){
     });
   });
 
-  describe('#listConversations()', function(){
-    it('should list out conversations', function(done){
+  describe('#listConversations()', function() {
+    it('should list out conversations', function(done) {
       intercom.listConversations({}, function (err, res) {
         if (err) {
           throw err;
@@ -119,9 +119,35 @@ describe('Intercom', function(){
     });
   });
 
-  describe('#getConversation()', function(){
-    it('should show a specific conversation', function(done){
+  describe('#getConversation()', function() {
+    it('should show a specific conversation', function(done) {
       intercom.getConversation({ id: 858210458 }, function (err, res) {
+        if (err) {
+          throw err;
+        }
+
+        console.log(res);
+        done();
+      });
+    });
+  });
+
+  describe('#getPages()', function() {
+    it('should get all the pages of an Intercom resource in parallel for events.', function(done) {
+      this.timeout(20000);
+      intercom.getPages('events', { user_id: '101', type: 'user'}, function (err, res) {
+        if (err) {
+          throw err;
+        }
+
+        console.log(res);
+        done();
+      });
+    });
+
+    it('should get all the pages of an Intercom resource in parallel for users.', function(done) {
+      this.timeout(20000);
+      intercom.getPages('users', {}, function (err, res) {
         if (err) {
           throw err;
         }
