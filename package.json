@@ -21,7 +21,7 @@
     "lodash": "~4.3.0",
     "q": "~1.4.1",
     "qs": "~6.1.0",
-    "request": "~2.69.0"
+    "request": "~2.74.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
