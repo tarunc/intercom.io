@@ -1,1 +1,1 @@
-var tree={"dirs":{".":{"dirs":{"lib":{"files":["IntercomError.js","intercom.io.js"]}}}}};
+var tree={"dirs":{"lib":{"files":["IntercomError.js","intercom.io.js"]}}};

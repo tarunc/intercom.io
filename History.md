@@ -1,4 +1,15 @@
 
+1.3.0 / 2016-10-22
+==================
+
+  * Updated `debug` dependency
+  * Updated `request` dependency
+  * Changed path for `bulkAddUsers`
+  * Extended result with intercom's ratelimit information
+  * Changed to use caret version ranges, not tilde in package.json
+  * Improved `getPages`
+  * Added support for Personal Access Tokens
+
 1.2.1 / 2016-02-15
 ==================
 

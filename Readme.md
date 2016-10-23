@@ -20,6 +20,18 @@ See [this library's docs](http://tarunc.github.io/intercom.io/) for complete API
 var Intercom = require('intercom.io');
 
 var options = {
+  personalAccessToken: "your_access_token"
+};
+
+var intercom = new Intercom(options);
+// Can also be written as:
+// var intercom = new Intercom("your_access_token");
+
+
+// Usage with appId and apiKey
+// appId and appKey will be disabled on intercom as of Jan 2017 and will be replaced by Personal Access Tokens
+// See https://developers.intercom.com/docs/personal-access-tokens
+var options = {
   apiKey: "your_API_key",
   appId: "your_APP_ID"
 };

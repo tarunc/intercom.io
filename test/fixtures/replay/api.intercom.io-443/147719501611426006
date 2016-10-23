@@ -1,0 +1,28 @@
+GET /events?before=1420326862472&intercom_user_id=54a87245fdaaad2f8302c6a1&type=user&user_id=101
+accept: application/json
+host: api.intercom.io
+authorization: Basic eng0ZHN3bTg6OThlYjRhMDU2MDJhZDA4NDBkZGViNmJiNjAzZDg4OWVmN2IwODNhYg==
+
+HTTP/1.1 200 OK
+cache-control: max-age=0, private, must-revalidate
+content-type: application/json; charset=utf-8
+date: Sun, 23 Oct 2016 03:56:56 GMT
+etag: W/"5760a2c87da9554afe5b7b8aae359f92"
+server: nginx
+status: 200 OK
+strict-transport-security: max-age=31557600; includeSubDomains; preload
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-intercom-version: b82df3c85d0c88ccbb60ed5f7da64940cc209dbc
+x-intercomrade: Like APIs? Check out https://www.intercom.io/careers!
+x-ratelimit-limit: 500
+x-ratelimit-remaining: 497
+x-ratelimit-reset: 1477195020
+x-request-id: antuniedjn7pur5c5mmg
+x-runtime: 0.052471
+x-xss-protection: 1; mode=block
+transfer-encoding: chunked
+connection: Close
+
+{"type":"event.list","events":[{"type":"event","id":"cc066c56-939b-11e4-98ad-75c924d5e857","created_at":1420325808,"event_name":"paid personal","user_id":"101","email":"","intercom_user_id":"54a87245fdaaad2f8302c6a1","metadata":{}},{"type":"event","id":"cc0e02b8-939b-11e4-941e-2391ccb95f1e","created_at":1420325808,"event_name":"paid","user_id":"101","email":"","intercom_user_id":"54a87245fdaaad2f8302c6a1","metadata":{}},{"type":"event","id":"fe623208-939a-11e4-9026-5ddaae527c0d","created_at":1420325463,"event_name":"paid","user_id":"101","email":"","intercom_user_id":"54a87245fdaaad2f8302c6a1","metadata":{}},{"type":"event","id":"fe61a888-939a-11e4-a5ba-51aac89eaffd","created_at":1420325463,"event_name":"paid personal","user_id":"101","email":"","intercom_user_id":"54a87245fdaaad2f8302c6a1","metadata":{}},{"type":"event","id":"f2789ff4-939a-11e4-a2fb-13ccf4e435b7","created_at":1420325443,"event_name":"started trial","user_id":"101","email":"","intercom_user_id":"54a87245fdaaad2f8302c6a1","metadata":{"status":"trial"}}],"pages":{"since":"https://api.intercom.io/events?before=1420326862472&intercom_user_id=54a87245fdaaad2f8302c6a1&type=user&since=1420325808820"}}

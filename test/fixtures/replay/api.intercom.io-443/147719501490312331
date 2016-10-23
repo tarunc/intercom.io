@@ -1,0 +1,28 @@
+POST /events
+accept: application/json
+content-type: application/json
+host: api.intercom.io
+authorization: Basic eng0ZHN3bTg6OThlYjRhMDU2MDJhZDA4NDBkZGViNmJiNjAzZDg4OWVmN2IwODNhYg==
+body: {\"event_name\":\"some event\",\"created\":1477195014,\"email\":\"somebody@example.com\"}
+
+HTTP/1.1 202 Accepted
+cache-control: no-cache
+content-type: application/json
+date: Sun, 23 Oct 2016 03:56:54 GMT
+server: nginx
+status: 202 Accepted
+strict-transport-security: max-age=31557600; includeSubDomains; preload
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-intercom-version: b82df3c85d0c88ccbb60ed5f7da64940cc209dbc
+x-intercomrade: Like APIs? Check out https://www.intercom.io/careers!
+x-ratelimit-limit: 500
+x-ratelimit-remaining: 500
+x-ratelimit-reset: 1477195020
+x-request-id: antuni3lesgul215jb8g
+x-runtime: 0.217272
+x-xss-protection: 1; mode=block
+transfer-encoding: chunked
+connection: Close
+

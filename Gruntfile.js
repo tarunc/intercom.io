@@ -23,8 +23,8 @@ module.exports = function ConfigureGruntService(grunt) {
     docker: {
       app: {
         expand: true,
-        src: ['./lib/*.js'],
-        dest: 'docs',
+        src: ['lib/*.js'],
+        dest: 'docs/',
         options: {
           onlyUpdated: false,
           colourScheme: 'default',
@@ -41,7 +41,7 @@ module.exports = function ConfigureGruntService(grunt) {
     shell: {
       // Define a `sweetenDocker` command which sweetens the output from docker
       sweetenDocker: {
-        command: 'bin/sweeten-docker ./docs',
+        command: 'bin/sweeten-docker ./docs/lib',
         stdout: true,
         stderr: true,
         failOnError: true
@@ -66,8 +66,8 @@ module.exports = function ConfigureGruntService(grunt) {
     copy: {
       docs: {
         files: [{
-          src: './docs/intercom.io.js.html',
-          dest: './docs/index.html'
+          src: 'docs/intercom.io.js.html',
+          dest: 'docs/index.html'
         }]
       }
     },
@@ -99,7 +99,7 @@ module.exports = function ConfigureGruntService(grunt) {
   // Running `grunt doc` will generate documentation for intercom.io.
   // The documentation will be put into the `./docs` folder in project's root
   // folder.
-  grunt.registerTask('doc', ['docker:app', 'shell:sweetenDocker', 'string-replace:docs', 'copy:docs', 'gh-pages']);
+  grunt.registerTask('doc', ['docker:app', 'shell:sweetenDocker', 'string-replace:docs', 'copy:docs']);
   // @note `grunt docs` provides an alias for the `grunt doc` task
   grunt.registerTask('docs', ['doc']);
 };
