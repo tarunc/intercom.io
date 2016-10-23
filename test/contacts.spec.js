@@ -8,9 +8,9 @@ var intercom = require('../index.js').create(APP_ID, API_KEY);
 
 // Chai Setup
 // -------------------------
-global.chai   = require('chai')
-global.expect = chai.expect
-global.assert = chai.assert
+global.chai   = require('chai');
+global.expect = chai.expect;
+global.assert = chai.assert;
 
 var chaiSubset = require('chai-subset');
 chai.use(chaiSubset);
@@ -36,7 +36,7 @@ Replay.mode = 'replay';
 
 
 
-describe('Contacts', function(){
+describe('Contacts', function() {
   var my_contact;
   var contact = {
     name: 'Ray Velcoro',
@@ -48,11 +48,11 @@ describe('Contacts', function(){
       my_contact = obj;
       done();
     })
-  })
+  });
 
   describe('#createContact()', function() {
 
-    it('should create and return a contact', function(){
+    it('should create and return a contact', function() {
       return intercom.createContact(contact).should.be.fulfilled
       .then(function(obj){
         expect(obj).to.containSubset(contact);
@@ -63,7 +63,7 @@ describe('Contacts', function(){
 
   describe('#updateContact()', function() {
 
-    it('should create and return a contact', function(){
+    it('should create and return a contact', function() {
       return intercom.updateContact(contact).should.be.fulfilled
       .then(function(obj){
         expect(obj).to.containSubset(contact);
@@ -74,7 +74,7 @@ describe('Contacts', function(){
 
   describe('#getContact()', function() {
 
-    it('should return our contact', function(){
+    it('should return our contact', function() {
       expect(my_contact).to.containSubset(contact);
     });
 
@@ -83,7 +83,7 @@ describe('Contacts', function(){
 
   describe('#deleteContact()', function() {
 
-    it('should return our contact', function(){
+    it('should return our contact', function() {
       return intercom.deleteContact(my_contact).should.be.fulfilled
       .then(function(obj){
         expect(obj).to.containSubset(my_contact);
@@ -99,7 +99,7 @@ describe('Contacts', function(){
       email: 'frank@hbo.com'
     };
 
-    it('should convert the contact', function(){
+    it('should convert the contact', function() {
 
       return intercom.createContact(contact).should.be.fulfilled.then(function(contact){
         return intercom.convertContact({
