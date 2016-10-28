@@ -1,4 +1,11 @@
 
+1.4.0 / 2016-10-28
+==================
+
+  * Removed requirement for `apiKey`
+  * Updated support for Personal Access Tokens
+  * Added support for a request timeout
+
 1.3.0 / 2016-10-22
 ==================
 

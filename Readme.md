@@ -5,6 +5,8 @@ An API client in Node.JS for talking to intercom.io. This package implements the
 
 There complete docs can be found here - http://doc.intercom.io/api. See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation of this library and all the methods that we support. See tests for more examples.
 
+** NOTE: This library is not maintained be me anymore. Pull requests are still welcome and will be merged appropriately. An excellent replacement to use is [Intercom's Node Library](https://github.com/intercom/intercom-node). **
+
 ## Installation
 
 To install the latest stable release with the command-line tool:
@@ -20,7 +22,8 @@ See [this library's docs](http://tarunc.github.io/intercom.io/) for complete API
 var Intercom = require('intercom.io');
 
 var options = {
-  personalAccessToken: "your_access_token"
+  personalAccessToken: "your_access_token", // Intercom Access Token
+  timeout: 60 * 1000 // Timeout (in ms) for requests to the intercom API
 };
 
 var intercom = new Intercom(options);
@@ -32,8 +35,8 @@ var intercom = new Intercom(options);
 // appId and appKey will be disabled on intercom as of Jan 2017 and will be replaced by Personal Access Tokens
 // See https://developers.intercom.com/docs/personal-access-tokens
 var options = {
-  apiKey: "your_API_key",
-  appId: "your_APP_ID"
+  apiKey: "your_API_key", // Your Personal Intercom API Key
+  appId: "your_APP_ID" // Your Intercom App Id
 };
 
 var intercom = new Intercom(options);

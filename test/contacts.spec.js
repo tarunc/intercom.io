@@ -1,10 +1,13 @@
+// Please set up the approprite environment variables
+var APP_ID = process.env.INTERCOM_APP_ID;
+var API_KEY = process.env.INTERCOM_API_KEY;
 
-
-// Please change appId and apiKey
-var APP_ID = 'zx4dswm8';
-var API_KEY = '98eb4a05602ad0840ddeb6bb603d889ef7b083ab';
+var PERSONAL_ACCESS_TOKEN = process.env.INTERCOM_ACCESS_TOKEN;
 
 var intercom = require('../index.js').create(APP_ID, API_KEY);
+
+// To test with a PERSONAL_ACCESS_TOKEN, uncomment line below
+// var intercom = require('../index.js').create(PERSONAL_ACCESS_TOKEN);
 
 // Chai Setup
 // -------------------------

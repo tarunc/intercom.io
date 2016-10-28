@@ -1,13 +1,24 @@
 var assert = require('assert');
 
-// Please change appId and apiKey
-var APP_ID = 'zx4dswm8';
-var API_KEY = '98eb4a05602ad0840ddeb6bb603d889ef7b083ab';
+// Please set up the approprite environment variables
+var APP_ID = process.env.INTERCOM_APP_ID;
+var API_KEY = process.env.INTERCOM_API_KEY;
+
+var PERSONAL_ACCESS_TOKEN = process.env.INTERCOM_ACCESS_TOKEN;
 
 var intercom = require('../index.js').create(APP_ID, API_KEY);
 // events api requires v3 endpoint
-var intercom_v3 = require('../index.js').create(APP_ID, API_KEY, {endpoint: 'https://api.intercom.io/'});
+var intercom_v3 = require('../index.js').create(APP_ID, API_KEY, {
+  endpoint: 'https://api.intercom.io/'
+});
 
+// Tests with a PERSONAL_ACCESS_TOKEN
+// var intercom = require('../index.js').create(PERSONAL_ACCESS_TOKEN);
+// // events api requires v3 endpoint
+// var intercom_v3 = require('../index.js').create({
+//   personalAccessToken: PERSONAL_ACCESS_TOKEN,
+//   endpoint: 'https://api.intercom.io/'
+// });
 
 
 describe('Intercom', function() {
