@@ -5,7 +5,7 @@ An API client in Node.JS for talking to intercom.io. This package implements the
 
 There complete docs can be found here - http://doc.intercom.io/api. See [docs](http://tarunc.github.io/intercom.io/) for complete API documentation of this library and all the methods that we support. See tests for more examples.
 
-** NOTE: This library is not maintained be me anymore. Pull requests are still welcome and will be merged appropriately. An excellent replacement to use is [Intercom's Node Library](https://github.com/intercom/intercom-node). **
+**NOTE: This library is not maintained be me anymore. Pull requests are still welcome and will be merged appropriately. I recommend using [Intercom's Node Library](https://github.com/intercom/intercom-node) instead.**
 
 ## Installation
 
