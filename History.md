@@ -1,3 +1,8 @@
+1.5.0 / 2018-01-02
+==================
+
+  * Store Error Details from Intercom into `IntercomError`
+  * Fix `getPages` only returns single page if no more pages
 
 1.4.0 / 2016-10-28
 ==================
